@@ -1,10 +1,10 @@
 name: 05 - 1 - Event Filters and Activity Types
 run-name: It's a learning workflow run by ${{github.actor}}
-on: 
-  pull_request:
-    types: closed
-    branches:
-      - main
+on: workflow_dispatch
+  # pull_request:
+  #   types: closed
+  #   branches:
+  #     - main
 jobs:
   echo:
     runs-on: ubuntu-latest
