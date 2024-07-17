@@ -1,0 +1,24 @@
+name: 07 - Using Expressions
+run-name: It's a learning workflow run by ${{github.actor}}
+on: 
+  push:
+  workflow_dispatch:
+    inputs:
+      debug:
+        default: false
+        type: boolean
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: [debug] Print start-up data
+        if: ${{ inputs.debug }}
+        run: |
+          echo "Triggered by: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit SHA: ${{ github.sha }} "
+          echo "Runner OS: ${{ Runner.OS }}"
+      - name: [debug] Print when triggered from main
+        if: ${{ inputs.debug }} && ${{ github.ref }} == 'refs/heads/main'
+        run: echo "I was triggered from main"
+      - name: echo "hello, world"
