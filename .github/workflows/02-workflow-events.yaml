@@ -1,0 +1,10 @@
+name: 02 - Workflow Events
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: push 
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show the trigger
+        run: echo "This event is triggered by ${{ github.event_name }} event"
+        
