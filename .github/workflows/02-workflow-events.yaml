@@ -1,6 +1,14 @@
 name: 02 - Workflow Events
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: push 
+on: 
+  push:
+    branches:
+      main
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *" 
+
 jobs:
   echo:
     runs-on: ubuntu-latest
