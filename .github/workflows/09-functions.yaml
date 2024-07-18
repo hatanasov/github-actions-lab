@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Print PR title
         run: |
-          echo "${{ fromJson(github.event)}}"
+          echo "${{ toJson(github.event)}}"
       # - name: Print PR labels
       # - name: Bug step
       - name: Sleep for 20 seconds
